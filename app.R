@@ -10,10 +10,10 @@ ui <- fluidPage(
     sidebarLayout(
         sidebarPanel(
             sliderInput("bins",
-                        "Number of bins:",
+                        "Resolution:",
                         min = 1,
-                        max = 50,
-                        value = 30)
+                        max = 15,
+                        value = 10)
         ),
 
         mainPanel(
@@ -22,6 +22,7 @@ ui <- fluidPage(
     )
 )
 
+# Define server logic required to draw a histogram
 server <- function(input, output) {
 
     output$distPlot <- renderPlot({
